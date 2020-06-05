@@ -22,8 +22,7 @@ fun main(args: Array<String>){
 
 }
 
-//https://www.youtube.com/watch?v=oObg8ovE78Q
-//https://www.youtube.com/watch?v=Ux-BoW8h6BA
+
 
 
 fun choiceAction(lib: Library){
@@ -64,4 +63,8 @@ fun takeBookFromLib(): String{
     print("Which book do you want? ")
     val takeBookName = readLine()!!.toString()
     return takeBookName
+}
+
+fun countbooks(){
+
 }
