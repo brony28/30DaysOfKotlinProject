@@ -1,3 +1,4 @@
+import kotlin.system.exitProcess
 
 val TAKEBOOK = 1
 val GIVEBOOK = 2
@@ -27,17 +28,22 @@ fun main(args: Array<String>){
 
 fun choiceAction(lib: Library){
     while (choice!=EXIT){
-        greetUser()
+
         displayNoOfBooks(lib)
+        greetUser()
         choice= readLine()!!.toInt()
 
-        if(choice == GIVEBOOK){
-            val giveB = giveBookToLib()
-            lib.giveBook(giveB)
-        } else if (choice == TAKEBOOK){
-            val takeB = takeBookFromLib()
-            lib.takeBook(takeB)
+
+        when(choice){
+            GIVEBOOK -> {val giveB = giveBookToLib()
+                            lib.giveBook(giveB)}
+            TAKEBOOK -> {val takeB = takeBookFromLib()
+                            lib.takeBook(takeB)}
+            EXIT -> exitProcess(1)
+            else -> println("Select Proper Option!")
         }
+
+
     }
 }
 
@@ -49,22 +55,23 @@ fun greetUser(){
 }
 
 fun displayNoOfBooks(lib: Library) {
+    println("")
     println("Current No of Book Available : ${lib.numOFBook}")
     println("Available Books are : ${lib.listBook}")
+    println("= = = = = = = = = = = = = = = =  = = = =")
 }
 
 fun giveBookToLib(): String{
-    print("What is the name of the Book")
+    println("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-")
+    print("What is the name of the Book : ")
     val giveBookName = readLine()!!.toString()
     return giveBookName
 }
 
 fun takeBookFromLib(): String{
+    println("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-")
     print("Which book do you want? ")
     val takeBookName = readLine()!!.toString()
     return takeBookName
 }
 
-fun countbooks(){
-
-}
