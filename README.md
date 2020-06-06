@@ -11,6 +11,9 @@ MutableList is used to store the names of the books/novels that the user enters.
 
 ## References
 Codelab
+
 Kotlin Docs
+
 Techie Delight: https://www.techiedelight.com/Category/kotlin/
+
 Beginners Book: https://beginnersbook.com/category/kotlin-tutorial/
