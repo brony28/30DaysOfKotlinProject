@@ -19,7 +19,7 @@ fun main(args: Array<String>){
     println("Welcome To Rony's Library")
     val lib:Library = Library()  //created a class lib
 
-    choiceAction(lib)  //function arguement is an object, inorder to get access to the properties and methods
+    choiceAction(lib)  //function's arguement is an object, inorder to get access to the properties and methods
 
 }
 
