@@ -30,16 +30,15 @@ fun main(args: Array<String>){
 
 
 
-
 fun choiceAction(lib: Library){
     println("Welcome To Rony's Library")
     while (choice!=EXIT){
 
-        displayNoOfBooks(lib)
-        greetUser()
+        displayNoOfBooks(lib) //display books present
+        greetUser()           //Select option of take or give book
         choice= readLine()!!.toInt() //User Input //null pointer exception if its not Int
 
-        when(choice){ //When opertaor
+        when(choice){
             GIVEBOOK -> {val giveB = giveBookToLib()
                             lib.giveBook(giveB)}
             TAKEBOOK -> {val takeB = takeBookFromLib()
@@ -50,6 +49,7 @@ fun choiceAction(lib: Library){
     }
 }
 
+//select option
 fun greetUser(){
     println("Choose the option:")
     println("1. Take Book")
@@ -57,6 +57,7 @@ fun greetUser(){
     println("3. Exit")
 }
 
+//display books and count
 fun displayNoOfBooks(lib: Library) {
     println("")
     println("Current No of Book Available : ${lib.numOFBook}")
@@ -64,6 +65,7 @@ fun displayNoOfBooks(lib: Library) {
     println("= = = = = = = = = = = = = = = =  = = = =")
 }
 
+//Give book to the Library
 fun giveBookToLib(): String{
     println("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-")
     print("What is the name of the Book : ")
@@ -71,6 +73,7 @@ fun giveBookToLib(): String{
     return giveBookName
 }
 
+//Take book from Library
 fun takeBookFromLib(): String{
     println("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-")
     print("Which book do you want? ")
