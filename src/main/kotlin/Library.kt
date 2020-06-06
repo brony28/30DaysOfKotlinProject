@@ -24,7 +24,7 @@ class Library {
     }
 
 
-    init {
+    init { // init is called when the object is called.
         println("If the available books are empty, Kindly wait for someone to donate :P")
     }
 
